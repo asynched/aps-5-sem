@@ -17,7 +17,7 @@ namespace Models
     public static List<Client> clients = new List<Client>();
   }
 
-  public class ConnectedClientsMessage : Message<ConnectedClients>
+  public class ConnectedClientsMessage : JsonMessage<ConnectedClients>
   {
     public ConnectedClientsMessage(ConnectedClients data) : base("CONNECTED_CLIENTS", data) { }
   }

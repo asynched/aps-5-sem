@@ -10,7 +10,7 @@ namespace Models
     }
   }
 
-  public class RegistrationMessage : Message<Registration>
+  public class RegistrationMessage : JsonMessage<Registration>
   {
     public RegistrationMessage(Registration data) : base("REGISTRATION", data) { }
   }
