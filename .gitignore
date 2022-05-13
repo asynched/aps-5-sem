@@ -1,2 +1,10 @@
+# Globals
+**/.vscode
+
+# Backend
 **/bin
 **/obj
+**/net6.0
+
+# Frontend
+**/node_modules
