@@ -9,7 +9,7 @@ import UserCard from '@/components/users/UserCard'
 import { PaperAirplaneIcon } from '@heroicons/react/outline'
 import MessagesContainer from '@/components/messages/MessagesContainer'
 
-const socket = new WebSocket('ws://localhost:8080')
+const socket = new WebSocket(import.meta.env.VITE_APP_WEBSOCKET_URL)
 
 socket.onmessage = (rawMessage) => {
   const message = JSON.parse(rawMessage.data)
