@@ -54,7 +54,7 @@ namespace Services
 
       // Creates a new disconnection message and serializes it to string.
       var disconnection = new Disconnection(Guid.NewGuid().ToString(), $"{Name} has disconnected.", Name, DateTime.Now.ToString());
-      var message = JsonSerializer.Serialize(disconnection);
+      var message = JsonSerializer.Serialize(new DisconnectionMessage(disconnection));
 
       // Broadcasts the disconnection message to the clients and sends a
       // revalidation message to the frontend.

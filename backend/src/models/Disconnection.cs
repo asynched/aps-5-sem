@@ -19,13 +19,20 @@ namespace Models
     {
       this.Id = id;
       this.Message = message;
-      this.User = user;
+      this.User = "Server";
       this.Date = date;
     }
 
     public string ToJson()
     {
       return JsonSerializer.Serialize(this);
+    }
+  }
+
+  public class DisconnectionMessage : JsonMessage<Disconnection>
+  {
+    public DisconnectionMessage(Disconnection disconnection) : base("DISCONNECTION", disconnection)
+    {
     }
   }
 }

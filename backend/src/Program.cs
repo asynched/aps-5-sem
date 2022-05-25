@@ -7,11 +7,12 @@ namespace WebsocketServer
   {
     public static void Main(string[] args)
     {
-      var webSocketServer = new WebSocketServer("ws://localhost:8080");
+      var websocketAddress = "ws://localhost:8080";
+      var webSocketServer = new WebSocketServer(websocketAddress);
       webSocketServer.AddWebSocketService<Services.WebSocketService>("/");
 
       webSocketServer.Start();
-      Logger.Info("Server started on 'ws://localhost:8080/'");
+      Logger.Info($"Server started on '{websocketAddress}'");
 
       while (true)
       {
